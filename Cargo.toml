@@ -1,5 +1,5 @@
 [package]
-name = "ProjectBackup"
+name = "project-backup"
 version = "0.1.0"
 authors = ["Johan Nicander <mr.johannicander@gmail.com>"]
 edition = "2018"
