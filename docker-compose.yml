@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pb
+    ports:
+      - "5000:5000"
+    # command: project-backup
+    # env_file: .env-local
