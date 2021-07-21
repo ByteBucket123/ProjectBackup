@@ -11,7 +11,7 @@ RUN apt-get update && \
 # 1b: Download and compile Rust dependencies (and store as a separate Docker layer)
 RUN USER=root cargo new project_backup
 WORKDIR /usr/src/project_backup
-COPY Cargo.toml Cargo.lock ./
+COPY Cargo.toml Cargo.lock? ./
 RUN cargo install --target x86_64-unknown-linux-musl --path .
 
 # 1c: Build the exe using the actual source code
