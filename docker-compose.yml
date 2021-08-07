@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: pb
+    container_name: project_backup
     ports:
-      - "5000:5000"
+      - "7878:7878"
     # command: project_backup
     # env_file: .env-local
