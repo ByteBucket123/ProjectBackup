@@ -6,7 +6,7 @@ WORKDIR /usr/src
 RUN rustup target add x86_64-unknown-linux-musl
 
 # 1b: Download and compile Rust dependencies (and store as a separate Docker layer)
-RUN USER=root cargo new project_backup --lib
+RUN USER=root cargo new project_backup
 WORKDIR /usr/src/project_backup
 COPY Cargo.toml Cargo.lock? ./
 RUN cargo build --release
