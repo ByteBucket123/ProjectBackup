@@ -20,4 +20,4 @@ FROM scratch
 COPY --from=builder /usr/local/cargo/bin/project_backup .
 # COPY static .
 USER 1000
-CMD ["./project_backup"]
+CMD ["./project_backup","server"]
