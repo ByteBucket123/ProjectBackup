@@ -1,7 +1,6 @@
 use anyhow::{Context, Result};
 use std::io::prelude::*;
-use std::net::TcpListener;
-use std::net::TcpStream;
+use std::net::{TcpListener, TcpStream};
 use std::str;
 use std::thread;
 use std::time::Duration;
@@ -20,7 +19,9 @@ pub fn start() {
         let stream = stream.unwrap();
 
         pool.spawn(|| {
-            handle_connection(stream).unwrap();
+            handle_connection(stream).unwrap_or_else(|err| {
+                eprintln!("Error handling stream: {}", err);
+            });
         });
     }
 }
